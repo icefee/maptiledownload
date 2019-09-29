@@ -13,7 +13,7 @@ const { area, range, types, theme } = config;
 const [s_lat, s_lng, e_lat, e_lng] = area;
 
 const mapTool = new MapTool();
-const downloader = new DownloadTiles({ types, theme });
+const downloader = new DownloadTiles({ types, theme }, __dirname);
 
 const getPoints = () => {
     let points = [];
@@ -42,7 +42,7 @@ const task = () => {
         },
         process(val) {
             if(!downloader.downloading) return;
-            // console.log('已下载：' + (val * 100).toFixed(2) + '%')
+            console.log('已下载：' + (val * 100).toFixed(2) + '%')
         }
     })
 }
