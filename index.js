@@ -37,8 +37,8 @@ const task = () => {
     let points = getPoints();
     if(!points.length) return;
     downloader.downloadTiles(points, {
-        success() {
-            //
+        success({ SUCCESS, FAIL }) {
+            console.log(`下载完成, 成功：${SUCCESS}, 失败：${FAIL}`)
         },
         process(val) {
             if(!downloader.downloading) return;
