@@ -3,7 +3,7 @@ const https = require('https');
 const url = require('url');
 const io = require('./io');
 
-export class DownloadTiles {
+module.exports = class DownloadTiles {
 	constructor({ theme, types }, dir) {
 		this.theme = theme || '';
 		this.types = types || [];
